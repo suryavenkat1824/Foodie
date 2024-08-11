@@ -36,7 +36,7 @@ const PlaceOrder = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-         `${url}/api/order`,
+         `${url}/api/orders`,
         {
           items: cart,
           amount: totalPrice - discount,
