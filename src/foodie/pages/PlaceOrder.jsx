@@ -36,7 +36,7 @@ const PlaceOrder = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-         `${url}/api/orders`,
+         `${url}/api/order`,
         {
           items: cart,
           amount: totalPrice - discount,
@@ -73,6 +73,7 @@ const PlaceOrder = () => {
     } catch (error) {
       console.error("Error placing order:", error);
       // Handle error
+      console.log(`${error}`);
       alert("Please Login for Placing Order");
     }
   };

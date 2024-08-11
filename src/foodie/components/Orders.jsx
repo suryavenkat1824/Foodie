@@ -76,18 +76,18 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TopBar from './TopBar';
-
+import { url } from '../api';
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [openOrderId, setOpenOrderId] = useState(null);
-
+  
   useEffect(() => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:4000/api/order', {
+        const response = await axios.get(`${url}/api/order`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
